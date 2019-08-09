@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26544cd2-b145-4598-b504-0cf577b58872" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/PKG-00.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/lib.exe.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/warn-lib.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/build/lib/xref-lib.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/dist/lib.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/ikona.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/lib.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/lib.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm/plik.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+            <state relative-caret-position="194">
+              <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -80,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -177,7 +160,6 @@
         <option value="$PROJECT_DIR$/database/seeds/ProductSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/OrdersSeeder.php" />
         <option value="$PROJECT_DIR$/app/Custom/StatisticsCollector.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
@@ -194,6 +176,7 @@
         <option value="$PROJECT_DIR$/app/Mail/ReportMail.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/sendReport.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
       </list>
     </option>
   </component>
@@ -330,13 +313,6 @@
               <item name="SimEc" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimEc" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Console" type="462c0819:PsiDirectoryNode" />
-              <item name="Commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SimEc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimEc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Mail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -414,7 +390,7 @@
       <workItem from="1565158084994" duration="20138000" />
       <workItem from="1565194082094" duration="10500000" />
       <workItem from="1565246261400" duration="10897000" />
-      <workItem from="1565343118063" duration="8097000" />
+      <workItem from="1565343118063" duration="8257000" />
     </task>
     <servers />
   </component>
@@ -451,7 +427,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65111000" />
+    <option name="totallyTimeSpent" value="65271000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -826,10 +802,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="187">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -843,10 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="194">
+          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
         </state>
       </provider>
     </entry>
