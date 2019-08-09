@@ -14,6 +14,29 @@ use Illuminate\Support\Facades\DB;
 
 class Report
 {
+    /**
+     * @return string
+     */
+    public function getBestSellingProductName(): string
+    {
+        return $this->bestSellingProductName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBestSellingProductAmount(): string
+    {
+        return $this->bestSellingProductAmount;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSumOfPrices(): ?float
+    {
+        return $this->sumOfPrices;
+    }
 
     private $bestSellingProductName;
     private $bestSellingProductAmount;
@@ -27,17 +50,24 @@ class Report
         $this->sumOfPrices = $this->sumOfYesterday();
     }
 
-    private static function bestSellingProductYesterday():String{
-        $raw = DB::raw('select name from bestSellingProduct');
-        return $raw->getValue();
+    public static function bestSellingProductYesterday():String{
+        $raw = DB::select(DB::raw('select name from bestSellingProduct'));
+        if(count($raw)==0)
+            return "nothing";
+        return $raw[0]->name;
     }
-    private static function numberOfBestSellingProducts(){
-        $raw = DB::raw('select total from bestSellingProduct');
-        return $raw->getValue();
+    public static function numberOfBestSellingProducts(){
+        $raw = DB::select(DB::raw('select total from bestSellingProduct'));
+        if(count($raw)==0)
+            return 0;
+        return $raw[0]->total;
     }
-    private static function sumOfYesterday(){
-        $raw = DB::raw('select sum from sum_of_yesterday');
-        return $raw->getValue();
+    public static function sumOfYesterday():float{
+        $raw = DB::select(DB::raw('select sum from sum_of_yesterday'));
+        if(count($raw)==0){
+            return 0;
+        }
+        return $raw[0]->sum;
     }
 
     public function generate(){

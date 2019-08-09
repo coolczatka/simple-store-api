@@ -17,6 +17,7 @@ class ExampleTest extends TestCase
     {
         $report = new Report();
         $pdf = $report->generate();
-        $this->assertTrue(true);
+        $this->assertEquals('cos',get_class($pdf));
+        $this->assertIsFloat($report->getSumOfPrices());
     }
 }

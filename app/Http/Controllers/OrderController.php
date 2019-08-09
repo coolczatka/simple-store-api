@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMail;
 use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -25,10 +28,13 @@ class OrderController extends Controller
     public function create(Request $request)
     {
         $order = new Order();
-        $order->name = $request->name;
         $order->product_id = $request->product_id;
         $order->user_id = auth('api')->user()->id;
         $order->save();
+
+        $product = Product::where('id','=',$request->product_id)->get();
+
+        Mail::to(auth('api')->user()->email)->send(new OrderMail($product));
     }
 
     /**

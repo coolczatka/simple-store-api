@@ -15,7 +15,6 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
             $table->integer('product_id');
             $table->integer('user_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
