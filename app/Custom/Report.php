@@ -72,9 +72,9 @@ class Report
 
     public function generate(){
         $html = "<h1>Report ".(Carbon::now()->sub(1,'day')).'</h1></br>';
-        $html .= "Best selling product yesterday was ".$this->bestSellingProductName;
-        $html .= '</br>'."Best selling product order amount was ".$this->bestSellingProductAmount;
-        $html .= "</br>"."Sum of purchase price was ".$this->sumOfPrices;
+        $html .= "<div>Best selling product yesterday was ".$this->bestSellingProductName."</div>";
+        $html .= "<div>Best selling product order amount was ".$this->bestSellingProductAmount."</div>";
+        $html .= "<div>Sum of purchase price was ".$this->sumOfPrices."</div>";
         $pdf = PDF::loadHtml($html);
         return $pdf;
     }

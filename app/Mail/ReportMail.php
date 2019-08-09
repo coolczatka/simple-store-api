@@ -17,7 +17,7 @@ class ReportMail extends Mailable
      *
      * @return void
      */
-    public function __construct(PDF $pdf)
+    public function __construct(String $pdf)
     {
         $this->pdf = $pdf;
     }
@@ -29,6 +29,6 @@ class ReportMail extends Mailable
      */
     public function build()
     {
-        return $this->text("Report")->attach($this->pdf);
+        return $this->html("<h1>Report</h1>")->attach($this->pdf);
     }
 }

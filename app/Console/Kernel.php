@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\sendReport;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        sendReport::class
     ];
 
     /**
@@ -24,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('sendReport')->dailyAt("08:00");
+        $schedule->command('report:send')->dailyAt('20:00');
     }
 
     /**

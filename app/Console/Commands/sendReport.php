@@ -4,8 +4,11 @@ namespace App\Console\Commands;
 
 use App\Custom\Report;
 use App\Mail\ReportMail;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use App\User;
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class sendReport extends Command
 {
@@ -14,7 +17,7 @@ class sendReport extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'report:send';
 
     /**
      * The console command description.
@@ -43,8 +46,13 @@ class sendReport extends Command
         $admins = User::where('role','=',True)->get();
         $report = new Report();
         $pdf = $report->generate();
+        $pdf->save(public_path('file.pdf'));
         foreach ($admins as $admin){
-            Mail::to($admin->email)->send(new ReportMail($pdf));
+            Mail::to($admin->email)->send(new ReportMail(public_path('/file.pdf')));
+            Log::info("Raport send to ".$admin->email);
+
         }
+        echo "Raport send to admins";
+        unlink(public_path('/file.pdf'));
     }
 }

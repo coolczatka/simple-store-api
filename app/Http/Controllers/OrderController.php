@@ -32,9 +32,11 @@ class OrderController extends Controller
         $order->user_id = auth('api')->user()->id;
         $order->save();
 
-        $product = Product::where('id','=',$request->product_id)->get();
+        $product = Product::find($request->product_id);
 
         Mail::to(auth('api')->user()->email)->send(new OrderMail($product));
+
+        return response(json_encode(['created'=>'true']),201);
     }
 
     /**
