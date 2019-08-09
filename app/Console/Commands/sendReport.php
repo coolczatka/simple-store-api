@@ -2,13 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Custom\Report;
-use App\Mail\ReportMail;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use App\User;
+use App\Jobs\sendReportMail;
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Output\ConsoleOutput;
 
 class sendReport extends Command
 {
@@ -43,16 +38,7 @@ class sendReport extends Command
      */
     public function handle()
     {
-        $admins = User::where('role','=',True)->get();
-        $report = new Report();
-        $pdf = $report->generate();
-        $pdf->save(public_path('file.pdf'));
-        foreach ($admins as $admin){
-            Mail::to($admin->email)->send(new ReportMail(public_path('/file.pdf')));
-            Log::info("Raport send to ".$admin->email);
-
-        }
-        echo "Raport send to admins";
-        unlink(public_path('/file.pdf'));
+        sendReportMail::dispatch();
+        echo "<info>Mails are sending</info>";
     }
 }

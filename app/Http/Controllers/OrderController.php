@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendOrderMail;
 use App\Mail\OrderMail;
 use App\Order;
 use App\Product;
+use Dompdf\Exception;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -27,16 +30,22 @@ class OrderController extends Controller
      */
     public function create(Request $request)
     {
-        $order = new Order();
-        $order->product_id = $request->product_id;
-        $order->user_id = auth('api')->user()->id;
-        $order->save();
+        try {
+            $order = new Order();
+            $order->product_id = $request->product_id;
+            $order->user_id = auth('api')->user()->id;
+            $order->save();
 
-        $product = Product::find($request->product_id);
+            $product = Product::find($request->product_id);
 
-        Mail::to(auth('api')->user()->email)->send(new OrderMail($product));
+            SendOrderMail::dispatch($product);
+            return response(json_encode(['created'=>'true']),201);
+        }
+        catch(QueryException $e){
+            return response(['created'=>'false'],400);
+        }
 
-        return response(json_encode(['created'=>'true']),201);
+
     }
 
     /**

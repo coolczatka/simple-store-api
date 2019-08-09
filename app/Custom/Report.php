@@ -50,7 +50,7 @@ class Report
         $this->sumOfPrices = $this->sumOfYesterday();
     }
 
-    public static function bestSellingProductYesterday():String{
+    public static function bestSellingProductYesterday():?String{
         $raw = DB::select(DB::raw('select name from bestSellingProduct'));
         if(count($raw)==0)
             return "nothing";
@@ -62,7 +62,7 @@ class Report
             return 0;
         return $raw[0]->total;
     }
-    public static function sumOfYesterday():float{
+    public static function sumOfYesterday():?float{
         $raw = DB::select(DB::raw('select sum from sum_of_yesterday'));
         if(count($raw)==0){
             return 0;
